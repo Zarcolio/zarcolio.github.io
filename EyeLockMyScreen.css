@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+  color: white
+}
+p,h1 {
+	margin:0;
+	padding:0;
+}
+a:link {
+	color: white;
+}
+a:visited {
+	color: white;
+}
+a:hover {
+	color: lightblue;
+}
+a:active {
+	color: lightblue;
+}
+.credits {
+	color: white;
+	font-size:small;
+}
+.largetext {
+	#text-align: center;
+	color: white;
+	font-size:large;
+}
+.xlargetext {
+	#text-align: center;
+	color: white;
+	font-size:x-large;
+}
+.canvasEye2 {
+	margin: auto;
+}
+h1 {
+	font-size:x-large;
+}
