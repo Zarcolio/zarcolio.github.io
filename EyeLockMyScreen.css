@@ -10,7 +10,7 @@ html, body {
 	display: block;
 	color: white;
 	font-size: large;
-	font-family: sans-serif; /* Replace with the desired font family */
+	font-family: sans-serif; /* Specified font family */
 }
 
 @media only screen and (display-mode: fullscreen) {
@@ -73,6 +73,7 @@ a:active {
 .largetext {
 	color: white;
 	font-size: large;
+	font-family: sans-serif; /* Specified font family */
 }
 
 .xlargetext {
