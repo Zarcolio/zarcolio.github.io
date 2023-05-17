@@ -1,43 +1,70 @@
 <!DOCTYPE html>
-<html lang="en"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style type="text/css" id="dark-mode-custom-style" lang="en"></style><style type="text/css" id="dark-mode-native-style" lang="en"></style><head>
+<html lang="en">
+<head>
 	<title>Eye Lock My Screen</title>
-		<link rel="shortcut icon" type="image/ico" href="/EyeLockMyScreen.ico"/>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta name="description" content="Eye Lock My Screen; A playful way to show your collegue it's a good idea to lock your screen.">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="twitter:card" content="summary_large_image">
-                <meta name="twitter:title" content="Eye Lock My Screen - Eye can see you secret data!">
-                <meta name="twitter:description" content="A playful way to show your collegue it's a good idea to lock your screen.">
-                <meta name="twitter:image" content="https://EyeLockMyScreen.com/EyeLockMyScreenTw.png">
-		<meta property="og:title" content="Eye Lock My Screen - Eye can see you secret data!">
-		<meta property="og:image" content="https://EyeLockMyScreen.com/EyeLockMyScreenFb.png">
-		<meta property="og:description" content="A playful way to show your collegue it's a good idea to lock your screen.">
-		<meta property="og:url" content="https://EyeLockMyScreen.com">
-		<link rel="canonical" href="https://eyelockmyscreen.com/">
-		<link type="text/css" href="EyeLockMyScreen.css" rel="stylesheet">
-		<script type="text/javascript" src="jquery-1.js"></script>
-		<script type="text/javascript" src="fullscreen.js"></script>
-		<script type="text/javascript" src="eyesoncanvas.js"></script>
-		<script type="text/javascript" src="piwik.js"></script>
-	</head>
-	<body>
-		<center>
-		<div id="canvasEye2">
-			<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
-			<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
-		</div>
-		
-		<table><tbody><tr><td>
-		<div class="xlargetext">
-			<h1>Eye see you forgot to lock your screen 🔒</h1>
-			<h1>Now eye can see all your secret data!</h1>
-		</div>
-		<br>
-		<div class="largetext">
-			<p>Click on one of my eyes to enter or escape full screen.</p>
-		</div>
-		
-		</td></tr></tbody></table>
-	
+	<link rel="shortcut icon" type="image/ico" href="/EyeLockMyScreen.ico"/>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Eye Lock My Screen; A playful way to show your colleague it's a good idea to lock your screen.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Eye Lock My Screen - Eye can see your secret data!">
+	<meta name="twitter:description" content="A playful way to show your colleague it's a good idea to lock your screen.">
+	<meta name="twitter:image" content="https://EyeLockMyScreen.com/EyeLockMyScreenTw.png">
+	<meta property="og:title" content="Eye Lock My Screen - Eye can see your secret data!">
+	<meta property="og:image" content="https://EyeLockMyScreen.com/EyeLockMyScreenFb.png">
+	<meta property="og:description" content="A playful way to show your colleague it's a good idea to lock your screen.">
+	<meta property="og:url" content="https://EyeLockMyScreen.com">
+	<link rel="canonical" href="https://eyelockmyscreen.com/">
+	<link type="text/css" href="EyeLockMyScreen.css" rel="stylesheet">
+	<script type="text/javascript" src="jquery-1.js"></script>
+	<script type="text/javascript" src="fullscreen.js"></script>
+	<script type="text/javascript" src="eyesoncanvas.js"></script>
+	<script type="text/javascript" src="piwik.js"></script>
+	<script type="text/javascript" src="opennewwindow.js"></script>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 
-</center></body></html>
+		.link-wrapper {
+			display: block;
+		}
+
+		@media only screen and (display-mode: fullscreen) {
+			.link-wrapper {
+				display: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="canvasEye2">
+		<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
+		<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
+	</div>
+
+	<table>
+		<tbody>
+			<tr>
+				<td>
+					<div class="xlargetext">
+						<h1>Eye see you forgot to lock your screen 🔒</h1>
+						<h1>Now eye can see all your secret data!</h1>
+					</div>
+					<br>
+					<div class="largetext">
+						<p>Click on one of my eyes to enter or escape full screen.</p>
+					</div>
+					<div class="link-wrapper">
+						<a href="#" onclick="openNewWindow(); return false;">Clone me</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
