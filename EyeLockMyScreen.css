@@ -1,3 +1,40 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.link-wrapper {
+	display: block;
+}
+
+@media only screen and (display-mode: fullscreen) {
+	.link-wrapper {
+		display: none;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.container > * {
+	margin: 5px 0;
+}
+
+.container h1:first-child,
+.container .largetext {
+	margin-top: 0;
+}
+
+.container .canvas-container {
+	margin-bottom: 10px;
+}
 body {
   background-color: black;
   color: white
