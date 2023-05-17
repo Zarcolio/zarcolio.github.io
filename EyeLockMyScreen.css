@@ -8,8 +8,9 @@ html, body {
 
 .link-wrapper {
 	display: block;
-	font-family: Arial, sans-serif; /* Set the desired font type */
-	font-size: large; /* Set the desired font size */
+	color: white;
+	font-size: large;
+	font-family: sans-serif; /* Replace with the desired font family */
 }
 
 @media only screen and (display-mode: fullscreen) {
