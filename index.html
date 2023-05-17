@@ -23,29 +23,28 @@
 	<script type="text/javascript" src="opennewwindow.js"></script>
 </head>
 <body>
-	<div id="canvasEye2">
-		<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
-		<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
+	<div id="canvasEye2" style="display: flex; flex-direction: column; align-items: center;">
+		<div class="canvas-container">
+			<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
+		</div>
+		<div class="canvas-container">
+			<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
+		</div>
 	</div>
 
-	<table>
-		<tbody>
-			<tr>
-				<td>
-					<div class="xlargetext">
-						<h1>Eye see you forgot to lock your screen 🔒</h1>
-						<h1>Now eye can see all your secret data!</h1>
-					</div>
-					<br>
-					<div class="largetext">
-						<p>Click on one of my eyes to enter or escape full screen.</p>
-					</div>
-					<div class="link-wrapper">
-						<a href="#" onclick="openNewWindow(); return false;">Clone me</a>
-					</div>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="container">
+		<div class="xlargetext">
+			<h1 style="margin-bottom: 3px;">Eye see you forgot to lock your screen 🔒</h1>
+			<h1 style="margin-top: 0;">Now eye can see all your secret data!</h1>
+		</div>
+
+		<div class="largetext">
+			<p style="margin-top: 0;">Click on one of my eyes to enter or escape full screen.</p>
+		</div>
+
+		<div class="link-wrapper">
+			<a href="#" onclick="openNewWindow(); return false;">Clone me</a>
+		</div>
+	</div>
 </body>
 </html>
