@@ -8,6 +8,7 @@ html, body {
 
 .link-wrapper {
 	display: block;
+	font-family: inherit; /* Inherits the font from the parent */
 }
 
 @media only screen and (display-mode: fullscreen) {
