@@ -10,7 +10,7 @@ html, body {
 	display: block;
 	color: white;
 	font-size: large;
-	font-family: sans-serif; /* Specified font family */
+	font-family: sans-serif;
 }
 
 @media only screen and (display-mode: fullscreen) {
@@ -73,12 +73,13 @@ a:active {
 .largetext {
 	color: white;
 	font-size: large;
-	font-family: sans-serif; /* Specified font family */
+	font-family: sans-serif;
 }
 
 .xlargetext {
 	color: white;
 	font-size: x-large;
+	font-family: sans-serif;
 }
 
 .canvasEye2 {
