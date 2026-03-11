@@ -1,45 +1,131 @@
 <!DOCTYPE html>
-<html lang="en"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style type="text/css" id="dark-mode-custom-style" lang="en"></style><style type="text/css" id="dark-mode-native-style" lang="en"></style><head>
+<html lang="en">
+<head>
 	<title>Eye Lock My Screen</title>
-		<link rel="shortcut icon" type="image/ico" href="/EyeLockMyScreen.ico"/>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta name="description" content="Eye Lock My Screen; A playful way to show your collegue it's a good idea to lock your screen.">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="twitter:card" content="summary_large_image">
-                <meta name="twitter:title" content="Eye Lock My Screen - Eye can see you secret data!">
-                <meta name="twitter:description" content="A playful way to show your collegue it's a good idea to lock your screen.">
-                <meta name="twitter:image" content="https://EyeLockMyScreen.com/EyeLockMyScreenTw.png">
-		<meta property="og:title" content="Eye Lock My Screen - Eye can see you secret data!">
-		<meta property="og:image" content="https://EyeLockMyScreen.com/EyeLockMyScreenFb.png">
-		<meta property="og:description" content="A playful way to show your collegue it's a good idea to lock your screen.">
-		<meta property="og:url" content="https://EyeLockMyScreen.com">
-		<link rel="canonical" href="https://eyelockmyscreen.com/">
-		<link type="text/css" href="EyeLockMyScreen.css" rel="stylesheet">
-		<script type="text/javascript" src="jquery-1.js"></script>
-		<script type="text/javascript" src="fullscreen.js"></script>
-		<script type="text/javascript" src="eyesoncanvas.js"></script>
-		<script type="text/javascript" src="piwik.js"></script>
-		<script type="text/javascript" src="opennewwindow.js"></script>
-	</head>
-	<body>
-		<center>
-		<div id="canvasEye2">
-			<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
-			<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
-		</div>
-		
-		<div class="xlargetext">
-			<h1>Eye see you forgot to lock your screen 🔒</h1>
-			<h1>Now eye can see all your secret data!</h1>
-		</div>
-		<br>
-		<div class="largetext">
-			<p>Click on one of my eyes to enter or escape full screen.</p>
-		</div>
-		<div class="link-wrapper">
-			<a href="#" onclick="openNewWindow(); return false;" alt="Open this page again in a new window/tab" title="Open this page again in a new window/tab">Clone this window</a> if you have multiple screens to fill.</br>
-			Got a Flipper Zero/Rubber Ducky? Use my <a href="https://github.com/Zarcolio/flipperzero/blob/main/BadUSB/Ducky%20Scripts/Awareness/EyeLock_Edge_Win.txt" alt="Ducky script to open this website in full screen and lock the screen" title="Ducky script to open this website in full screen and lock the screen">Ducky script</a>.</br>
-			This page is also reachable via the shortcut domain <a href="https://lock.nu" alt="Shortcut domain to eyelockmyscreen.com" title="Shortcut domain to eyelockmyscreen.com">lock.nu</a>.
-		</div>
+	<link rel="shortcut icon" type="image/ico" href="/EyeLockMyScreen.ico"/>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Eye Lock My Screen; A playful way to show your collegue it's a good idea to lock your screen.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Eye Lock My Screen - Eye can see you secret data!">
+	<meta name="twitter:description" content="A playful way to show your collegue it's a good idea to lock your screen.">
+	<meta name="twitter:image" content="https://EyeLockMyScreen.com/EyeLockMyScreenTw.png">
+	<meta property="og:title" content="Eye Lock My Screen - Eye can see you secret data!">
+	<meta property="og:image" content="https://EyeLockMyScreen.com/EyeLockMyScreenFb.png">
+	<meta property="og:description" content="A playful way to show your collegue it's a good idea to lock your screen.">
+	<meta property="og:url" content="https://EyeLockMyScreen.com">
+	<link rel="canonical" href="https://eyelockmyscreen.com/">
+	<link type="text/css" href="EyeLockMyScreen.css" rel="stylesheet">
+	<script type="text/javascript" src="jquery-1.js"></script>
+	<script type="text/javascript" src="fullscreen.js"></script>
+	<script type="text/javascript" src="eyesoncanvas.js"></script>
+	<script type="text/javascript" src="piwik.js"></script>
+	<script type="text/javascript" src="opennewwindow.js"></script>
 
-</center></body></html>
+	<style>
+		/* ── Mobile section: hidden by default (desktop) ── */
+		.mobile-view {
+			display: none;
+		}
+
+		/* Touch device with a mobile-sized screen — covers portrait AND landscape, excludes touchscreen laptops/monitors */
+		@media (pointer: coarse) and (max-width: 1024px) {
+			/* Hide desktop content */
+			.desktop-view {
+				display: none !important;
+			}
+
+			/* Show mobile content */
+			.mobile-view {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				font-family: Arial, sans-serif;
+				background-color: #f0f0f0;
+				color: #333;
+				line-height: 1.6;
+				min-height: 100vh;
+				padding: 1rem;
+				box-sizing: border-box;
+			}
+
+			.mobile-view img {
+				width: 100%;
+				max-width: 400px;
+				max-height: 45vh;
+				object-fit: contain;
+				height: auto;
+				margin-bottom: 1rem;
+			}
+
+			.mobile-view p {
+				font-size: 1rem;
+				text-align: center;
+				margin-bottom: 1rem;
+				max-width: 90%;
+			}
+		}
+
+		/* In landscape on touch devices, side-by-side layout */
+		@media (pointer: coarse) and (max-width: 1024px) and (orientation: landscape) {
+			.mobile-view {
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				padding: 0.5rem;
+			}
+
+			.mobile-view img {
+				width: auto;
+				max-width: 45vw;
+				max-height: 90vh;
+				margin-bottom: 0;
+				margin-right: 1.5rem;
+				flex-shrink: 0;
+			}
+
+			.mobile-view .text-block {
+				max-width: 45vw;
+				text-align: center;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<!-- ── DESKTOP CONTENT ── -->
+	<div class="desktop-view">
+		<center>
+			<div id="canvasEye2">
+				<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
+				<canvas class="canvasEye" width="200" height="200" onclick="toggleFullScreen()"></canvas>
+			</div>
+
+			<div class="xlargetext">
+				<h1>Eye see you forgot to lock your screen 🔒</h1>
+				<h1>Now eye can see all your secret data!</h1>
+			</div>
+			<br>
+			<div class="largetext">
+				<p>Click on one of my eyes to enter or escape full screen.</p>
+			</div>
+			<div class="link-wrapper">
+				<a href="#" onclick="openNewWindow(); return false;" alt="Open this page again in a new window/tab" title="Open this page again in a new window/tab">Clone this window</a> if you have multiple screens to fill.</br>
+				Got a Flipper Zero/Rubber Ducky? Use my <a href="https://github.com/Zarcolio/flipperzero/blob/main/BadUSB/Ducky%20Scripts/Awareness/EyeLock_Edge_Win.txt" alt="Ducky script to open this website in full screen and lock the screen" title="Ducky script to open this website in full screen and lock the screen">Ducky script</a>.</br>
+				This page is also reachable via the shortcut domain <a href="https://lock.nu" alt="Shortcut domain to eyelockmyscreen.com" title="Shortcut domain to eyelockmyscreen.com">lock.nu</a>.
+			</div>
+		</center>
+	</div>
+
+	<!-- ── MOBILE CONTENT ── -->
+	<div class="mobile-view">
+		<img src="phone_unlocked.png" alt="Unlocked phone illustration">
+		<div class="text-block">
+			<p>Did you know that leaving your phone unlocked can expose your sensitive information to potential threats?</p>
+			<p>Protecting your phone is essential to maintaining your privacy and security. Always remember to lock your phone when not in use.</p>
+		</div>
+	</div>
+
+</body>
+</html>
